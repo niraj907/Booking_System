@@ -148,7 +148,7 @@ error:function (){}
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-<?php include_once('includes/footer.php');?>
+ <!--<?php include_once('includes/footer.php');?> -->
 
 </div>
 <!-- ./wrapper -->

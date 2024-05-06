@@ -50,7 +50,7 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
 
 <body>
 	<h1 class="header-w3ls">
-		RTBS | Check Status</h1>
+		ThakaliGhar | Check Status</h1>
 	<div class="appointment-w3">
 		<form action="search-result.php" method="post">
 			<div class="personal">

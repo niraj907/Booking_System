@@ -1,24 +1,25 @@
-<?php include_once('admin/includes/config.php');
+<?php 
+include_once('admin/includes/config.php');
 
 if(isset($_POST['submit'])){
+    $fname = $_POST['name'];
+    $emailid = $_POST['email'];
+    $phonenumber = $_POST['phonenumber'];
+    $bookingdate = date('Y-m-d', strtotime($_POST['bookingdate'])); // Format the date
+    $bookingtime = $_POST['bookingtime'];
+    $noadults = $_POST['noadults'];
+    $nochildrens = $_POST['nochildrens'];
+    $bno = mt_rand(100000000,9999999999);
 
-$fname=$_POST['name'];
-$emailid=$_POST['email'];
-$phonenumber=$_POST['phonenumber'];
-$bookingdate=$_POST['bookingdate'];
-$bookingtime=$_POST['bookingtime'];
-$noadults=$_POST['noadults'];
-$nochildrens=$_POST['nochildrens'];
-$bno=mt_rand(100000000,9999999999);
-//Code for Insertion
-$query=mysqli_query($con,"insert into tblbookings(bookingNo,fullName,emailId,phoneNumber,bookingDate,bookingTime,noAdults,noChildrens) values('$bno','$fname','$emailid','$phonenumber','$bookingdate','$bookingtime','$noadults','$nochildrens')");
-if($query){
-echo '<script>alert("Your order sent successfully. Booking number is "+"'.$bno.'")</script>';
-echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
-} else {
-echo "<script>alert('Something went wrong. Please try again.');</script>";
-}
-
+    //Code for Insertion
+    $query = mysqli_query($con, "INSERT INTO tblbookings(bookingNo, fullName, emailId, phoneNumber, bookingDate, bookingTime, noAdults, noChildrens) 
+                                VALUES ('$bno', '$fname', '$emailid', '$phonenumber', '$bookingdate', '$bookingtime', '$noadults', '$nochildrens')");
+    if($query){
+        echo '<script>alert("Your order sent successfully. Booking number is '.$bno.'")</script>';
+        echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
+    } else {
+        echo "<script>alert('Something went wrong. Please try again.');</script>";
+    }
 }
 
 ?>

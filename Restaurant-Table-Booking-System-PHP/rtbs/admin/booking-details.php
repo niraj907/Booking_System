@@ -1,3 +1,5 @@
+
+
 <?php session_start();
 //error_reporting(0);
 // Database Connection
@@ -34,6 +36,8 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
 
 }
 }
+
+
 
   ?>
 <!DOCTYPE html>
